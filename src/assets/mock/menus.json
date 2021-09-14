@@ -1,0 +1,4 @@
+[
+    {"titre":"User", "route":{"path":"user", "component":"UserComponent", "data":{"source":"article", "service":"DataService"}}},
+    {"titre":"Model", "route":{"path":"model", "component":"ModelComponent", "data":{"source":"blog", "service":"DataService"}}}
+]
