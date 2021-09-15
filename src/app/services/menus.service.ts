@@ -23,21 +23,21 @@ export class MenusService {
 	routes:route[] = []
 
 	constructor(private http: HttpClient, private router: Router) {
-		this.getRoutes();
+		// this.getRoutes();
 	}
 	
 	
-	getRoutes(){
-		this.http.get(`${environment.url}/get-routes`).subscribe((res:any)=>{
-			this.routes = res
-			console.log("les routes existants: ",this.router.config);
-			const tmp = this.router.config.pop();
-			this.routes.map((route:any) => {
-				this.router.config.push(this.setRoutes(route.route))
-			})
-			this.router.config.push(tmp as Route)
-		})
-	}
+	// getRoutes(){
+	// 	this.http.get(`${environment.url}/get-routes`).subscribe((res:any)=>{
+	// 		this.routes = res
+	// 		console.log("les routes existants: ",this.router.config);
+	// 		const tmp = this.router.config.pop();
+	// 		this.routes.map((route:any) => {
+	// 			this.router.config.push(this.setRoutes(route.route))
+	// 		})
+	// 		this.router.config.push(tmp as Route)
+	// 	})
+	// }
 	
 	
 	// Récupérer les menus

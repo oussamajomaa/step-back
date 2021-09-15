@@ -56,18 +56,22 @@
     <div class="" >
         <h2 class="w-100">Ajouter un champ</h2><br>
         <h4 class="w-100">Type du champ: <span class="step-info mb-2">{{field_type}}</span></h4>
-        <div class="d-flex w-100 justify-content-between mb-2 align-items-center">
-            <input style="padding:10px;" type="text" placeholder="Saisir le nom du champ" class="form-control w-50" [(ngModel)]="name_field" [disabled]="field_type === ''">
-            <div class="">
-                <input 
-                    [(ngModel)]="isChecked" 
-                    [disabled]="name_field===''" 
-                    type="checkbox" 
-                    class="mr-2"
-                    name="requis" id="requis">
-                <label for="requis">Champ requis?</label>
+        <div class="row">
+            <div class="inputs col-lg-8 col-md-12 ml-1">
+                <input style="padding:10px;" type="text" placeholder="Saisir le nom du champ" class="form-control w-50" [(ngModel)]="name_field" [disabled]="field_type === ''">
+                <div>
+                    <input 
+                        [(ngModel)]="isChecked" 
+                        [disabled]="name_field===''" 
+                        type="checkbox" 
+                        class="mr-2"
+                        name="requis" id="requis">
+                    <label for="requis">Champ requis?</label>
+                </div>
             </div>
-            <button [disabled]="name_field===''" mat-raised-button class="success" (click)="addField()">Valider</button>
+            <div class="col mr-1" align="right">
+                <button [disabled]="name_field===''" mat-raised-button class="success" (click)="addField()">Valider</button>
+            </div>
         </div>
     </div>
 

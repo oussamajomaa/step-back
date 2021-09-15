@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ModelService } from 'src/app/system/services/model.service';
+import { ModelService } from 'src/app/services/model.service';
 import { v4 as uuid } from 'uuid';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from 'src/app/system/services/data.service';
+import { DataService } from 'src/app/services/data.service';
 
 
 

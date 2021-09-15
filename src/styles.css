@@ -18,6 +18,10 @@ body { margin: 0; font-family: 'Rubik', sans-serif; }
     color: white;
 }
 
+mat-divider{
+    background: black;
+ }
+
 h1,h2,h3,h4,h5,h6,a,p,span,button{
     font-family: 'Rubik', sans-serif; 
     padding: 0;

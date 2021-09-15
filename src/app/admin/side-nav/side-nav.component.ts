@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ModelService } from 'src/app/system/services/model.service';
+import { ModelService } from 'src/app/services/model.service';
 import { DOCUMENT } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
 
@@ -135,16 +135,21 @@ export class SideNavComponent implements OnInit {
 	]
 
 	innerWidth:number=window.innerWidth
+	role:any= ""
 
   	constructor(
 		public modelService:ModelService,
 		public auth: AuthService,
 		@Inject(DOCUMENT) public document: Document
-		) { }
+		) {
+			
+		 }
 		
 
 	ngOnInit(): void {
 		console.log(window.innerWidth)
+		this.role = localStorage.getItem('role')
+		console.log(this.role);
 		
 	}
 
@@ -167,6 +172,14 @@ export class SideNavComponent implements OnInit {
 		
 		this.innerWidth = event.target.innerWidth;
 		console.log(this.innerWidth);
+	}
+
+	logout(){
+		localStorage.removeItem('token')
+		localStorage.removeItem('role')
+		localStorage.removeItem('name')
+		localStorage.removeItem('id')
+		this.auth.logout({returnTo: document.location.origin})
 	}
 
 }

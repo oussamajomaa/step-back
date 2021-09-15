@@ -3,9 +3,9 @@ import {FormControl} from '@angular/forms';
 import { v4 as uuid } from 'uuid';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ModelService } from 'src/app/system/services/model.service';
-import { MenusService } from 'src/app/system/services/menus.service';
-import { field } from 'src/app/system/interfaces/field';
+import { ModelService } from 'src/app/services/model.service';
+import { MenusService } from 'src/app/services/menus.service';
+import { field } from 'src/app/interfaces/field';
 
 
 @Component({

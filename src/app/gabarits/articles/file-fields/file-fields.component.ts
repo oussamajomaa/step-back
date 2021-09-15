@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup,  FormBuilder, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import { DataService } from 'src/app/system/services/data.service';
+import { DataService } from 'src/app/services/data.service';
 import { v4 as uuid } from 'uuid';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';

@@ -18,6 +18,7 @@ h1,h2,h3{
     display: none;
     width: 60px;
     margin: 10px;
+    
 }
 
 .bar {
@@ -61,6 +62,7 @@ li{
     background: #140a82;
     position: fixed;
     left: 0;
+    padding-right: 0;
 }
 
 .nav-link-ang{

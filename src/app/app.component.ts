@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { MenusService } from './system/services/menus.service';
-
-
+import { MenusService } from './services/menus.service';
+import jwt_decode from 'jwt-decode'
 
 @Component({
   selector: 'app-root',
@@ -10,28 +10,49 @@ import { MenusService } from './system/services/menus.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  token:any=''
-  user:any={}
-  constructor(public menuServ:MenusService,public auth: AuthService){
-      this.auth.idTokenClaims$.subscribe(idToken => {
-        this.token = idToken?.__raw.split('.',1)[0]
-        console.log(this.token)
-        localStorage.setItem('token',this.token)
-      })
-      this.auth.user$.subscribe(res => {
-        this.user = res
-        if (this.user){
-          localStorage.setItem('name',this.user.name)
-          localStorage.setItem('id',this.user.sub)
-        }
-      })
-  }
+	token:any=''
+	user:any={}
+	role:any=""
+	constructor(public menuServ:MenusService,public auth: AuthService, private http:HttpClient){
+		console.log("auth service ",this.auth);
+		
+		this.auth.idTokenClaims$.subscribe((res:any) => {
+			console.log("idToken ",res);
+			if (res && res['https://example.com/roles'])
+				this.role = res['https://example.com/roles'][0]
+			if (this.role != '')
+				localStorage.setItem('role',this.role)
+			
+			this.token = res?.__raw
+			localStorage.setItem('token',this.token)
+			// console.log(this.token);
+			const decode = jwt_decode(res?.__raw) 
+			console.log("decode ",decode);
+			
+			
+			// this.http.get('https://dev-m438qh2i.us.auth0.com/api/v2/users',
+			// {params:{q:'email:"osmjom@gmail.com"',search_engine: 'v3'}})
+			// .subscribe(users => console.log(users))
+		})
+		
+		this.auth.user$.subscribe(res => {
+			this.user = res
+			console.log(this.user);
+			
+			if (this.user){
+				localStorage.setItem('name',this.user.name)
+				localStorage.setItem('id',this.user.sub)
+			}
+		})
+		
+		
+	}
+  
 
-  name = 'Jquery Integration With Angular!';  
-  isJqueryWorking: any;  
-  ngOnInit()  
-  {  
-    
-  }  
+	ngOnInit() {  
+		
+	}  
+
+	
 
 }

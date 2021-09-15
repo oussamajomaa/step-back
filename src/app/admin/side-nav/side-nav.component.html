@@ -1,9 +1,4 @@
 <div class="row w-100 body-sideNav">
-    <!--<div class="info top-nav pt-3"></div>-->
-    
-    <!--<div class="side-left pt-3">
-        <img src="assets/img/logo_white.png" width="150px" alt="" routerLink='accueil'>	-->
-
     <nav class="navbar-ang ">
         <a routerLink="/">
             <img src="assets/img/logo_white.png" width="150px" alt="" routerLink='accueil'>
@@ -25,7 +20,8 @@
         <ul  class="nav-menu-ang pl-3" *ngFor="let uls of leftMenu">
             <h2 class="mt-5">{{uls.category}}</h2>
             <li class="nav-item-ang" *ngFor="let li of uls.ul">
-                <a  class="nav-link-ang "
+                <a  
+                    class="nav-link-ang "
                     style="font-size: 16px;" 
                     routerLink={{li.link}} 
                     routerLinkActive={{li.class}} 
@@ -49,11 +45,41 @@
     </div>
 
     <div class="side-right" >
-        <div class="right-menu" *ngFor="let rightMenu of rightMenus">
+        <!--<div class="right-menu" *ngFor="let rightMenu of rightMenus">
             <a routerLink="{{rightMenu.link}}"><mat-icon matTooltip="{{rightMenu.title}}">{{rightMenu.icon}}</mat-icon></a>
+        </div>-->
+        <div class="right-menu">
+            <a routerLink="model" 
+                style="cursor: pointer;">
+                <mat-icon matTooltip="Type de contenu">dashboard</mat-icon>
+            </a>
         </div>
         <div class="right-menu">
-            <a (click)="auth.logout({ returnTo: document.location.origin })" 
+            <a routerLink="user" 
+                style="cursor: pointer;">
+                <mat-icon matTooltip="Menu">list</mat-icon>
+            </a>
+        </div>
+        <div class="right-menu">
+            <a routerLink="media" 
+                style="cursor: pointer;">
+                <mat-icon matTooltip="Media">perm_media</mat-icon>
+            </a>
+        </div>
+        <div class="right-menu" *ngIf="role === 'admin'">
+            <a routerLink="user" 
+                style="cursor: pointer;">
+                <mat-icon matTooltip="User">person</mat-icon>
+            </a>
+        </div>
+        <div class="right-menu">
+            <a routerLink="user" 
+                style="cursor: pointer;">
+                <mat-icon matTooltip="Paramètres">tune</mat-icon>
+            </a>
+        </div>
+        <div class="right-menu">
+            <a (click)="logout()" 
                 style="cursor: pointer;">
                 <mat-icon matTooltip="Déconnexion">logout</mat-icon>
             </a>

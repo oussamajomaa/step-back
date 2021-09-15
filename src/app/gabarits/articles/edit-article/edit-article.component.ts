@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { DataService } from 'src/app/system/services/data.service';
+import { DataService } from 'src/app/services/data.service';
 
 import { FormGroup,  FormBuilder, Validators } from '@angular/forms';
 
