@@ -62,6 +62,18 @@ h2,h1{
         flex-direction:column ;
         justify-content:start
     }
+    .button-icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        /* flex-wrap: nowrap; */
+    }
+    .button-icon button{
+        width: 70%;
+        height: 60px;
+        margin-bottom: 10px
+    }
 }
 
 
