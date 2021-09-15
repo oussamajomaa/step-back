@@ -57,7 +57,6 @@ export class ModelComponent implements OnInit {
 			this.models = res
 			console.log("models............ ",this.models);
 			const model  = this.models.find((model:any) => model.title === 'button')
-			this.button = model.html
 			console.log(model);
 			
 		})

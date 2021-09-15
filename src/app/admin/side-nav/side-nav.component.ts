@@ -97,23 +97,23 @@ export class SideNavComponent implements OnInit {
 				},
 			]
 		},
-		{
-			category:"Custom Components",
-			ul:[
-				{
-					title:"Geolocalisation",
-					link:"accueil",
-					icon:"",
-					class:"active"
-				},
-				{
-					title:"Another component",
-					link:"accueil",
-					icon:"",
-					class:"active"
-				},
-			]
-		},
+		// {
+		// 	category:"Custom Components",
+		// 	ul:[
+		// 		{
+		// 			title:"Geolocalisation",
+		// 			link:"accueil",
+		// 			icon:"",
+		// 			class:"active"
+		// 		},
+		// 		{
+		// 			title:"Another component",
+		// 			link:"accueil",
+		// 			icon:"",
+		// 			class:"active"
+		// 		},
+		// 	]
+		// },
 		{
 			category:"MetaData",
 			ul:[
@@ -136,20 +136,22 @@ export class SideNavComponent implements OnInit {
 
 	innerWidth:number=window.innerWidth
 	role:any= ""
+	models = []
 
   	constructor(
 		public modelService:ModelService,
 		public auth: AuthService,
 		@Inject(DOCUMENT) public document: Document
-		) {
-			
-		 }
+		) { }
 		
 
 	ngOnInit(): void {
 		console.log(window.innerWidth)
 		this.role = localStorage.getItem('role')
 		console.log(this.role);
+		this.modelService.getModels().subscribe((res:any) => {
+			this.models = res
+		})
 		
 	}
 

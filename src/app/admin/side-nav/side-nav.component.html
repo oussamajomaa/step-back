@@ -31,6 +31,19 @@
             </li>
         </ul>
 
+        <ul  class="nav-menu-ang pl-3">
+            <h2 class="mt-5">Custom component</h2>
+            <li class="nav-item-ang" *ngFor="let li of models">
+                <a  
+                    class="nav-link-ang "
+                    style="font-size: 16px;" 
+                    
+                    (click)="closeMenu()">
+                    {{li['title']}}
+                </a>
+            </li>
+        </ul>
+
         <div class="hamburger" (click)="mobileMenu()">
             <span class="bar"></span>
             <span class="bar"></span>
