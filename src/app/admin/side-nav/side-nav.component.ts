@@ -134,6 +134,7 @@ export class SideNavComponent implements OnInit {
 
 	]
 
+	
 	innerWidth:number=window.innerWidth
 	role:any= ""
 	models = []

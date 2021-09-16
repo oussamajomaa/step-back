@@ -3,3 +3,24 @@ h1,h2,h3{
     margin: 0;
     padding: 0;
 }
+
+body{
+    position: relative;
+}
+.spinner{
+    border: 16px solid #140a82;
+    border-top: 16px solid #ff5e1a;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    z-index: 100;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg)}
+    100% { transform: rotate(-360deg);}
+}

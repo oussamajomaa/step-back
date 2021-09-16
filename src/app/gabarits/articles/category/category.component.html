@@ -8,7 +8,8 @@
     </button>
 </div>
 
-<div *ngIf="categories.length>0" style="margin:5%;">
+<div *ngIf="categories.length===0" class="spinner"></div>
+<div *ngIf="categories.length>0" class="list">
     <mat-accordion >
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
@@ -23,19 +24,19 @@
                 <mat-divider></mat-divider>
             </div>
             <div class="row" *ngFor="let category of categories">
+                <mat-divider></mat-divider>
                 <div class="col"><h3>{{category.name}}</h3></div>
                 <div class="col">
                     <button mat-icon-button (click)="deleteCategory(category.id,category.name,$event)">
                         <mat-icon color="accent" matTooltip="supprimer">delete</mat-icon>
                     </button>
                 </div>
-                <mat-divider></mat-divider>
             </div>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
 
-<div [class.mat-elevation-z5]="fields" class="elevation">
+<div [class.mat-elevation-z5]="fields" class="add">
     <h1>Ajouter une catégorie</h1>
     <mat-form-field class="w-100" >
         <mat-label>Nom de la catégorie</mat-label>

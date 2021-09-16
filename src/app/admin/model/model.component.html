@@ -14,17 +14,17 @@
     <div class="my-2">
         <h2>Séléctionner un champ pour le composant</h2>
         <div class="button-icon">
-            <button (click)="generateInput('input','text')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>title</mat-icon> Text</button>
-            <button (click)="generateInput('input','email')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>email</mat-icon> Email</button>
-            <button (click)="generateInput('input','number')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>pin</mat-icon> Number</button>
+            <button (click)="generateInput('input','text')"  mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>title</mat-icon> Text</button>
+            <button (click)="generateInput('input','email')" mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>email</mat-icon> Email</button>
+            <button (click)="generateInput('input','number')" mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>pin</mat-icon> Number</button>
         </div>
         <div class="button-icon">
-            <button (click)="generateInput('input','date')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>date_range</mat-icon> Date</button>
-            <button (click)="generateInput('input','file')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>image</mat-icon> Image</button>
-            <button (click)="generateInput('input','boolean')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>radio_button_checked</mat-icon> Booléen</button>
+            <button (click)="generateInput('input','date')" mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>date_range</mat-icon> Date</button>
+            <button (click)="generateInput('input','file')" mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>image</mat-icon> Image</button>
+            <button (click)="generateInput('input','boolean')" mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>radio_button_checked</mat-icon> Booléen</button>
         </div>
         <div class="button-icon">
-            <button (click)="generateInput('textarea','textarea')" class="step-info" mat-button [disabled]="isValidate || name_component === ''"><mat-icon>notes</mat-icon>Text Area</button>
+            <button (click)="generateInput('textarea','textarea')" mat-stroked-button [disabled]="isValidate || name_component === ''"><mat-icon>notes</mat-icon>Text Area</button>
         </div>
     </div>
 
@@ -37,7 +37,7 @@
         <h4 class="w-100">Type du champ: <span class="step-info mb-2">{{field_type}}</span></h4>
         <div class="row">
             <div class="inputs col-lg-8 col-md-12 ml-1">
-                <input style="padding:10px;" type="text" placeholder="Saisir le nom du champ" class="form-control w-50" [(ngModel)]="name_field" [disabled]="field_type === ''">
+                <input style="padding:10px;" type="text" placeholder="Field name" class="form-control w-50" [(ngModel)]="name_field" [disabled]="field_type === ''">
                 <div>
                     <input 
                         [(ngModel)]="isChecked" 
