@@ -4,11 +4,13 @@ import { MediaComponent } from './admin/media/media.component';
 import { ModelComponent } from './admin/model/model.component';
 import { UserComponent } from './admin/user/user.component';
 import { AccueilComponent } from './gabarits/accueil/accueil.component';
+import { LoginComponent } from './gabarits/login/login.component';
 import { UserGuardGuard } from './services/user.guard';
 import { Erreur404Component } from './structure/erreur404/erreur404.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'accueil'},
+  {path: '', pathMatch: 'full', redirectTo: 'login'},
+  {path:"login", component:LoginComponent},
   {path:"accueil", component:AccueilComponent},
   {path:"model", component:ModelComponent},
   {path:"user", component:UserComponent,canActivate:[UserGuardGuard]},

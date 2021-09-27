@@ -1,0 +1,36 @@
+.login{
+    /* margin: 5%;
+    padding: 5%; */
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 15%;
+}
+
+.forgot{
+    margin-top:10px;
+    text-align: right;
+    color: #140a82;
+}
+
+@media (max-width:1000px){
+    .login{
+        width: 40%;
+    }
+}
+/* 
+eael-ticker-wrap-0d9a9f4
+ticker-badge
+*/
+@media (max-width:768px){
+    .login{
+        width: 60%;
+    }
+}
+
+@media (max-width:420px){
+    .login{
+        width: 80%;
+    }
+}

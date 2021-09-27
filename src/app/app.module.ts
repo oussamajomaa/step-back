@@ -49,6 +49,14 @@ import { FileFieldsComponent } from './gabarits/articles/file-fields/file-fields
 import { EditArticleComponent } from './gabarits/articles/edit-article/edit-article.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { MediaComponent } from './admin/media/media.component';
+import { LoginComponent } from './gabarits/login/login.component';
+
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 
 
 @NgModule({
@@ -70,6 +78,7 @@ import { MediaComponent } from './admin/media/media.component';
     FileFieldsComponent,
     EditArticleComponent,
     MediaComponent,
+    LoginComponent,
     
 
   ],
@@ -101,6 +110,10 @@ import { MediaComponent } from './admin/media/media.component';
       clientId: 'PxHnQFeh6V1I1hMuiyX0loFfcplCRE38'
     }),
     AngularEditorModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

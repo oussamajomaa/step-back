@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ModelService } from 'src/app/services/model.service';
 import { DOCUMENT } from '@angular/common';
-import { AuthService } from '@auth0/auth0-angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -141,7 +141,7 @@ export class SideNavComponent implements OnInit {
 
   	constructor(
 		public modelService:ModelService,
-		public auth: AuthService,
+		public authService:AuthService,
 		@Inject(DOCUMENT) public document: Document
 		) { }
 		
@@ -178,11 +178,12 @@ export class SideNavComponent implements OnInit {
 	}
 
 	logout(){
-		localStorage.removeItem('token')
-		localStorage.removeItem('role')
-		localStorage.removeItem('name')
-		localStorage.removeItem('id')
-		this.auth.logout({returnTo: document.location.origin})
+		this.authService.logout()
+		// localStorage.removeItem('token')
+		// localStorage.removeItem('role')
+		// localStorage.removeItem('name')
+		// localStorage.removeItem('id')
+		// this.auth.logout({returnTo: document.location.origin})
 	}
 
 }
