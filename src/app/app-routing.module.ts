@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MediaComponent } from './admin/media/media.component';
+import { MenuComponent } from './admin/menu/menu.component';
 import { ModelComponent } from './admin/model/model.component';
 import { UserComponent } from './admin/user/user.component';
 import { AccueilComponent } from './gabarits/accueil/accueil.component';
 import { LoginComponent } from './gabarits/login/login.component';
-import { UserGuardGuard } from './services/user.guard';
 import { Erreur404Component } from './structure/erreur404/erreur404.component';
 
 const routes: Routes = [
@@ -13,8 +13,9 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"accueil", component:AccueilComponent},
   {path:"model", component:ModelComponent},
-  {path:"user", component:UserComponent,canActivate:[UserGuardGuard]},
+  {path:"menu", component:MenuComponent},
   {path:"media", component:MediaComponent},
+  {path:"users", component:UserComponent},
   {path: 'articles', loadChildren: () => import('./gabarits/articles/articles.module').then(m => m.ArticlesModule) },
   { path: 'templates', loadChildren: () => import('./gabarits/templates/templates.module').then(m => m.TemplatesModule) },
   {path:"**", component:Erreur404Component},

@@ -17,14 +17,6 @@
                         <textarea matInput formControlName="content" rows="5" [(ngModel)]="content"></textarea>
                     </mat-form-field>
                     
-                     <!--
-                    <angular-editor 
-                        [config]="config"
-                        formControlName="content" 
-                        [placeholder]="'Enter text here...'" 
-                        [(ngModel)]="content">
-                    </angular-editor>
-                    -->
                     <mat-form-field class="w-100 mt-3">
                         <mat-label>Choose category (choice multiple)</mat-label>
                         <mat-select multiple formControlName="category" [(ngModel)]="savedCategories">

@@ -1,0 +1,29 @@
+h1,h2,h3{
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-weight: bolder;
+}
+
+.mat-card{
+    margin-bottom: 5px;
+    background-color: #e7eaeb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+
+input[type='radio']{
+    margin-right: 5px;
+}
+
+label{
+    margin-bottom: 0;
+}
+
+

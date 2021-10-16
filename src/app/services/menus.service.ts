@@ -79,4 +79,10 @@ export class MenusService {
 		}
 		return r as Route;
 	}
+
+	getMenu(){
+		return this.http.get(`${environment.url_menu}/get-menu`)
+	}
+
+	
 }

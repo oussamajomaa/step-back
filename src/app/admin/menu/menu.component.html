@@ -1,0 +1,91 @@
+<div style="padding: 5%;">
+    <h1 class="mb-3">Menus</h1>
+    <mat-divider class="w-100 mb-3"></mat-divider>
+    <div class="row ">
+        <div class="col-lg-6 col-md-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-3 ">
+                    <h2 class="w-100">Principal menu</h2>
+                   
+                    <div>
+                        <mat-form-field >
+                            <mat-label>Add element to menu</mat-label>
+                            <input matInput [(ngModel)]="element" #elementMenu >
+                        </mat-form-field>
+                        <mat-form-field >
+                            <mat-label>Element order</mat-label>
+                            <input matInput type="number" [(ngModel)]="element_order" >
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <button  mat-raised-button
+                            color="primary" 
+                            style="margin-top:20px"
+                            (click)="saveMenu()"
+                            [disabled]="element === '' || element_order === null">
+                            Add to menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    
+        <div class="col-lg-6 col-md-6 col-sm-12 menu">
+            <div *ngFor="let element of menu; let i = index" class="row">
+                <div class="col" >
+                    <mat-card class="row">
+                        <div class="col-2">
+                            <button matTooltip="supprimer" (click)="deleteMenu(element.id)" color="accent" mat-icon-button>
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                        <h3 class="col-6">{{element.menu_name}}</h3>
+                        <div class="col-3">
+                            <label for="default{{i}}" matTooltip="HomePage">
+                                <input 
+                                    type="radio" 
+                                    id="default{{i}}" 
+                                    name="default" 
+                                    value="{{element.menu_name}}" 
+                                    (click)="radioClick($event,element.id)"
+                                    [checked]="element.menu_default === true">
+                            Default</label>
+                        </div>
+                        <div class="col-1">
+                            {{element.menu_order}}
+                        </div>
+                    </mat-card> 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<hr>
+    <!--<div *ngFor="let user of users" class="row">
+        <div class="col">{{user.uid}}</div>
+        <div class="col">{{user.email}}</div>
+        <div class="col">
+            <button mat-icon-button color="accent">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="warning">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <h3 class="col"><button class="mb-5" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button></h3>
+    <div>
+        <input type="text" [(ngModel)]="email" class="p-1 m-1">
+        <input type="text" [(ngModel)]="password" class="p-1 m-1">
+        <button 
+            mat-raised-button
+            (click)="addUser()" 
+            [disabled]="email === '' || password === ''" 
+            class="step-blue">
+            Add User
+        </button>
+    </div>-->
+</div>

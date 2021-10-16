@@ -16,38 +16,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 })
 export class EditArticleComponent implements OnInit {
 
-	config: AngularEditorConfig = {
-		editable: true,
-		spellcheck: true,
-		height: '15rem',
-		minHeight: '5rem',
-		placeholder: 'Enter text here...',
-		translate: 'no',
-		showToolbar: true,
-		enableToolbar: true,
-		defaultParagraphSeparator: 'p',
-		defaultFontName: 'Arial',
-		sanitize: true,
-		toolbarHiddenButtons: [
-			['bold', 'italic'],
-			['fontSize']
-		  ],
-		customClasses: [
-		  {
-			name: "quote",
-			class: "quote",
-		  },
-		  {
-			name: 'redText',
-			class: 'redText'
-		  },
-		  {
-			name: "titleText",
-			class: "titleText",
-			tag: "h1",
-		  },
-		]
-	  };
+	
 
 	article:any={}
 	articles:any = []
